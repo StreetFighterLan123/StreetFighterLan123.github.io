@@ -8,5 +8,5 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to right, #bb13ca, #0f7777);
+    background-color: linear-gradient(to right, #bb13ca, #0f7777);
 }
