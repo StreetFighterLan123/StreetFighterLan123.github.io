@@ -21,13 +21,26 @@ function shuffle(array) {
 let sentIn = [];
 
 shuffle(wordList);
+console.log(wordList)
+for (var n = 0; n < wordList.length; n++) {
+    let parent = document.getElementById("typing-text");
+    let current = wordList[n];
+    let newElem = document.createElement("SPAN");
+    console.log(newElem);
+    newElem.setAttribute("id", "corpus");
+    newElem.setAttribute("class", "corpus");
+    newElem.innerHTML = current + " ";
+    parent.appendChild(newElem);
+}
+
 let newWordList = wordList.toString();
 newWordList = newWordList.replace(/,/g, ' ')
 const inputField = document.getElementById("input-field");
 const accDisp = document.getElementById("Accuracy");
 const wpmDisp = document.getElementById("WPM");
+const tsection = document.querySelector(".text-content");
 
-document.getElementById("tt").innerHTML = newWordList;
+/*document.getElementById("tt").innerHTML = newWordList;*/
 inputField.value = "";
 inputField.focus();
 
@@ -37,12 +50,20 @@ let i = 0
 let cor = 0;
 let incr = 0;
 let cpm = 0;
+var nodes = document.getElementById("typing-text").children;
+console.log(nodes)
 function checkIfaccurate(){
     if(inputField.value == wordList[i]){
+        // Correct color
+        nodes[i].style.color = "#506531";
         cor += 1;
         cpm += inputField.value.length
+        
     } else {
+        // Incorrect color
+        nodes[i].style.color = "#FF2D00";
         incr += 1;
+        
 
     }
     i += 1;
@@ -67,7 +88,6 @@ function checkCorrect(char){
 }
 function startFunc() {
     inputField.removeEventListener("keypress", startFunc);
-    console.log("before");
     inputField.addEventListener("keypress", checkCorrect);
     setTimeout(endFunc, 60000);
 }
