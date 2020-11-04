@@ -42,4 +42,17 @@ body{
 #test:hover {
     background-color: #8f4255;
     color: white;
-  }
+}
+#input-field {
+    font-size:25px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #392885;
+    color: rgb(211, 199, 33);
+
+}
