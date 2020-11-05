@@ -75,5 +75,13 @@ body{
     transform: translate(-0%, 350%);
     font-family: 'Noto Sans', sans-serif;
     text-align: center;
+}
+#Countdown{
+    transform: translate(-0%, 25%);
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    display: block;
+
 
 }

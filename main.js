@@ -39,6 +39,11 @@ const inputField = document.getElementById("input-field");
 const accDisp = document.getElementById("Accuracy");
 const wpmDisp = document.getElementById("WPM");
 const tsection = document.querySelector(".text-content");
+// countdown below
+const csection = document.getElementById("Countdown");
+
+
+
 /*document.getElementById("tt").innerHTML = newWordList;*/
 inputField.value = "";
 inputField.focus();
@@ -90,7 +95,7 @@ function checkCorrect(char){
         char.preventDefault();
         return false;
     }
-    if(keysPressed % 180 == 0 && keysPressed != 0){
+    if(keysPressed % 130 == 0 && keysPressed != 0){
         console.log("doing");
         const tsection = document.querySelector(".typing-section");
         const getStyle = getComputedStyle(tsection);
@@ -106,11 +111,19 @@ function checkCorrect(char){
 function startFunc() {
     inputField.removeEventListener("keypress", startFunc);
     inputField.addEventListener("keypress", checkCorrect);
-    setTimeout(endFunc, 60000);
+    let timer = 60000;
+    let bottomInc = 60;
+    var countdown = setInterval(function () {
+        bottomInc--;
+        csection.innerHTML = bottomInc;
+        if (bottomInc <= 0) clearInterval(countdown);
+    }, 1000);
+    setTimeout(endFunc, timer);
 }
 
 function endFunc() {
     console.log("60 seconds are over");
+    csection.innerHTML = "60";
     compute();
     inputField.disabled = true;
     inputField.value = "";
