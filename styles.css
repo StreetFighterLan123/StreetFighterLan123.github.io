@@ -73,4 +73,7 @@ body{
 }
 .finalStats{
     transform: translate(-0%, 350%);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
 }
