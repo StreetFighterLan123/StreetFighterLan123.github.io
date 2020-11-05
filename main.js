@@ -42,6 +42,7 @@ const tsection = document.querySelector(".text-content");
 /*document.getElementById("tt").innerHTML = newWordList;*/
 inputField.value = "";
 inputField.focus();
+inputField.disabled = false;
 
 inputField.addEventListener("keypress", startFunc); 
 
@@ -110,4 +111,6 @@ function startFunc() {
 function endFunc() {
     console.log("60 seconds are over");
     compute();
+    inputField.disabled = true;
+    inputField.value = "";
 }
