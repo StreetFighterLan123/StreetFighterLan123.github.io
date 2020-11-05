@@ -56,3 +56,21 @@ body{
     color: rgb(211, 199, 33);
 
 }
+.typing-text{
+    height: inherit;
+    overflow: hidden;
+}
+#corpus{
+    background-color: inherit;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 28.96875px;
+}
+.typing-section {
+    background-color: inherit;
+    height: 57.9375px;
+    margin: 25px;
+}
+.finalStats{
+    transform: translate(-0%, 350%);
+}

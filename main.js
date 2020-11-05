@@ -39,7 +39,6 @@ const inputField = document.getElementById("input-field");
 const accDisp = document.getElementById("Accuracy");
 const wpmDisp = document.getElementById("WPM");
 const tsection = document.querySelector(".text-content");
-
 /*document.getElementById("tt").innerHTML = newWordList;*/
 inputField.value = "";
 inputField.focus();
@@ -50,6 +49,7 @@ let i = 0
 let cor = 0;
 let incr = 0;
 let cpm = 0;
+let keysPressed = 0;
 var nodes = document.getElementById("typing-text").children;
 console.log(nodes)
 function checkIfaccurate(){
@@ -58,11 +58,13 @@ function checkIfaccurate(){
         nodes[i].style.color = "#506531";
         cor += 1;
         cpm += inputField.value.length
+        keysPressed += 1;
         
     } else {
         // Incorrect color
         nodes[i].style.color = "#FF2D00";
         incr += 1;
+        keysPressed += 1;
         
 
     }
@@ -80,10 +82,23 @@ function compute(){
 
 }
 function checkCorrect(char){
+    keysPressed += 1;
     if(char.which == 32){
         checkIfaccurate();
         char.preventDefault();
         return false;
+    }
+    if(keysPressed % 130 == 0 && keysPressed != 0){
+        console.log("doing");
+        const tsection = document.querySelector(".typing-section");
+        const getStyle = getComputedStyle(tsection);
+        let cur = getStyle.height;
+        cur = Number(cur.replace("px", ""));
+        if(cur < 500){
+            cur = ((cur + 28.96875).toString())+"px";
+            const currentHeight = tsection.style.height;
+            tsection.style.height = cur;
+        }
     }
 }
 function startFunc() {
