@@ -63,7 +63,7 @@ body{
 #corpus{
     background-color: inherit;
     font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     line-height: 28.96875px;
 }
 .typing-section {
@@ -73,7 +73,7 @@ body{
 }
 .finalStats{
     transform: translate(-0%, 350%);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     text-align: center;
 
 }

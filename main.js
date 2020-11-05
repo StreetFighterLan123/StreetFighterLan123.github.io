@@ -56,7 +56,8 @@ console.log(nodes)
 function checkIfaccurate(){
     if(inputField.value == wordList[i]){
         // Correct color
-        nodes[i].style.color = "#506531";
+        //nodes[i].style.color = "#506531";
+        nodes[i].style.color = '#33b8b8';
         cor += 1;
         cpm += inputField.value.length
         keysPressed += 1;
