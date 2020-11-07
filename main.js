@@ -94,7 +94,7 @@ function checkCorrect(char){
         char.preventDefault();
         return false;
     }
-    if(keysPressed % 130 == 0 && keysPressed != 0){
+    if(keysPressed % 120 == 0 && keysPressed != 0){
         console.log("doing");
         const tsection = document.querySelector(".typing-section");
         const getStyle = getComputedStyle(tsection);
