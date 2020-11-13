@@ -85,10 +85,10 @@ function compute(){
     let acc = Math.round(100-((incr/cor) * 100));
     let nospace = inputField.value;
     nospace = nospace.replace(/\s/g, "");
-    console.log(withoutSpace);
+    console.log(nospace);
     let asString = sentIn.toString();
     asString = asString.replace(/,/g, ' ');
-    let cpm = asString.length * 3;
+    let cpm = asString.length;
     let adjustedCpm = cpm - lengthOfIncorrect;
     let wpm = adjustedCpm / 5;
     wpm = Math.round(wpm);
@@ -105,7 +105,8 @@ function checkCorrect(char){
         char.preventDefault();
         return false;
     }
-    if(keysPressed % 120 == 0 && keysPressed != 0){
+    if(keysPressed > 120){
+        keysPressed = 0;
         console.log("doing");
         const tsection = document.querySelector(".typing-section");
         const getStyle = getComputedStyle(tsection);
@@ -115,6 +116,7 @@ function checkCorrect(char){
             cur = ((cur + 28.96875).toString())+"px";
             const currentHeight = tsection.style.height;
             tsection.style.height = cur;
+
         }
     }
 }
