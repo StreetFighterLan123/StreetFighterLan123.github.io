@@ -54,7 +54,7 @@ inputField.addEventListener("keypress", startFunc);
 let i = 0
 let cor = 0;
 let incr = 0;
-let cpm = 0;
+let lengthOfIncorrect = 0;
 let keysPressed = 0;
 var nodes = document.getElementById("typing-text").children;
 console.log(nodes)
@@ -63,7 +63,7 @@ function checkIfaccurate(){
         // Correct color
         nodes[i].style.color = '#33b8b8';
         cor += 1;
-        cpm += inputField.value.length + 1;
+        console.log(inputField.value.length)
         keysPressed += 1;
         
     } else {
@@ -71,6 +71,7 @@ function checkIfaccurate(){
         nodes[i].style.color = "#FF2D00";
         incr += 1;
         keysPressed += 1;
+        lengthOfIncorrect += wordList[i].length;
         
 
     }
@@ -82,7 +83,17 @@ function checkIfaccurate(){
 
 function compute(){
     let acc = Math.round(100-((incr/cor) * 100));
-    let wpm = cpm/5;
+    let nospace = inputField.value;
+    nospace = nospace.replace(/\s/g, "");
+    console.log(withoutSpace);
+    let asString = sentIn.toString();
+    asString = asString.replace(/,/g, ' ');
+    let cpm = asString.length * 3;
+    let adjustedCpm = cpm - lengthOfIncorrect;
+    let wpm = adjustedCpm / 5;
+    wpm = Math.round(wpm);
+    /*let wpm = cpm/5;*/
+
     accDisp.innerHTML = acc + "%";
     wpmDisp.innerHTML = wpm;
 
