@@ -63,7 +63,7 @@ function checkIfaccurate(){
         // Correct color
         nodes[i].style.color = '#33b8b8';
         cor += 1;
-        cpm += inputField.value.length;
+        cpm += inputField.value.length + 1;
         keysPressed += 1;
         
     } else {
