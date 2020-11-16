@@ -58,37 +58,40 @@ let lengthOfIncorrect = 0;
 let keysPressed = 0;
 var nodes = document.getElementById("typing-text").children;
 console.log(nodes)
+let spaces = 0
 function checkIfaccurate(){
     if(inputField.value == wordList[i]){
         // Correct color
         nodes[i].style.color = '#33b8b8';
         cor += 1;
-        console.log(inputField.value.length)
+        //console.log(inputField.value.length)
         keysPressed += 1;
         
     } else {
         // Incorrect color
+        lengthOfIncorrect += wordList[i].length + 1;
+        console.log(lengthOfIncorrect)
         nodes[i].style.color = "#FF2D00";
         incr += 1;
         keysPressed += 1;
-        lengthOfIncorrect += wordList[i].length;
         
 
     }
+    spaces += 1
     i += 1;
     sentIn.push(inputField.value);
+    console.log(inputField.value)
     inputField.value = "";
     inputField.value.replace(/\s+/g, '');
 }
 
 function compute(){
     let acc = Math.round(100-((incr/cor) * 100));
-    let nospace = inputField.value;
-    nospace = nospace.replace(/\s/g, "");
-    console.log(nospace);
     let asString = sentIn.toString();
-    asString = asString.replace(/,/g, ' ');
-    let cpm = asString.length;
+    console.log(asString)
+    asString = asString.replace(/,/g, '');
+    console.log(asString)
+    let cpm = asString.length+spaces;
     let adjustedCpm = cpm - lengthOfIncorrect;
     let wpm = adjustedCpm / 5;
     wpm = Math.round(wpm);
