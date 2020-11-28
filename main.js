@@ -95,6 +95,11 @@ function compute(){
     let adjustedCpm = cpm - lengthOfIncorrect;
     let wpm = adjustedCpm / 5;
     wpm = Math.round(wpm);
+    if(wpm <= 0){
+        wpm = 0;
+    }else if(acc <= 0){
+        acc = 0;
+    }
     /*let wpm = cpm/5;*/
 
     accDisp.innerHTML = acc + "%";
