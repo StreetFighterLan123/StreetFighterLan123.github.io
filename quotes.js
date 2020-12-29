@@ -1,4 +1,14 @@
-var quotesList = ["I was just talking to joe. Do you know who joe is? No, I don't. Joe mama.",  "Guys, have you heard of joe from fortnite? Joe mama.", "Bruh has occurred 204981509382 times. Are you sure? Yes.", "Once upon a time, there was a man named Joe. Now, ask who Joe is.", "They don't know that we know they know don't know we know they know do they know I don't know they know we know they know but they don't know that we know they know we know but they know that we know they know we know."];
+var quotesList = ["P1: I was just talking to joe. Do you know who joe is? P2: No, I don't. P1: Joe mama.",  
+"Guys, have you heard of joe from fortnite? Joe mama.", 
+"Bruh has occurred 204981509382 times. Are you sure? Yes.", 
+"Once upon a time, there was a man named Joe. Now, ask who Joe is.", 
+"They don't know that we know they know don't know we know they know do they know I don't know they know we know they know but they don't know that we know they know we know but they know that we know they know we know.",
+"Many of life's failures are people who did not realize how close they were to success when they gave up.",
+"Success usually comes to those who are too busy to be looking for it.",
+"The question isn't who is going to let me; it's who is going to stop me.",
+"It does not matter how slowly you go as long as you do not stop.", 
+"First, have a definite, clear practical ideal; a goal, an objective. Second, have the necessary means to achieve your ends; wisdom, money, materials, and methods. Third, adjust all your means to that end.",
+"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So, throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails. Explore, Dream, Discover."];
 var quote = quotesList[Math.floor(Math.random() * quotesList.length)];
 console.log("quote: " + quote);
 var nottest = false;
