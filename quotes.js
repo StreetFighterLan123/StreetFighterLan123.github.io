@@ -8,7 +8,8 @@ var quotesList = ["P1: I was just talking to joe. Do you know who joe is? P2: No
 "The question isn't who is going to let me; it's who is going to stop me.",
 "It does not matter how slowly you go as long as you do not stop.", 
 "First, have a definite, clear practical ideal; a goal, an objective. Second, have the necessary means to achieve your ends; wisdom, money, materials, and methods. Third, adjust all your means to that end.",
-"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So, throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails. Explore, Dream, Discover."];
+"Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So, throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails. Explore, Dream, Discover.",
+"Life becomes easier when you learn to accept the apology you never got."];
 var quote = quotesList[Math.floor(Math.random() * quotesList.length)];
 console.log("quote: " + quote);
 var nottest = false;
